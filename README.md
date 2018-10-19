@@ -1,6 +1,6 @@
 # rmv-card
 
-This card generates a simple departure card for the RMV public transport service.
+This card generates a simple departure card for the [RMV public transport](https://www.home-assistant.io/components/sensor.rmvtransport/) service.
 
 ![example](example.png)
 
