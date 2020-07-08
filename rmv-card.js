@@ -56,9 +56,7 @@ class RmvCard extends HTMLElement {
     var tablehtml = `
   <table>
   `
-    const now = new Date()
-    const utc = Date.UTC(now.getFullYear(), now.getMonth(), now.getDate(),
-      now.getHours(), now.getMinutes(), now.getSeconds(), now.getMilliseconds())
+
     const next = {
       'line': state.attributes['line'],
       'product': state.attributes['product'],
