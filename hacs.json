@@ -1,6 +1,5 @@
 {
   "name": "rmv-card",
   "content_in_root": true,
-  "filename": "rmv-card.js",
-  "render_readme": true
+  "filename": "rmv-card.js"
 }
