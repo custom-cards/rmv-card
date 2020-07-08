@@ -1,8 +1,24 @@
 # rmv-card
 
-This card generates a simple departure card for the [RMV public transport](https://www.home-assistant.io/components/sensor.rmvtransport/) service.
+This card generates a simple departure card for the RMV public transport service.
 
 ![example](example.png)
+
+## Config options
+
+### Title
+
+```yaml
+friendly_name: My custom title
+hide_title: true
+```
+
+### Departure time and minutes
+
+```yaml
+hide_minutes: true
+show_time: true
+```
 
 ## Installation
 
@@ -14,7 +30,7 @@ Install `rmv-card` by copying `rmv-card.js` from this repo to `<config directory
 
 ```bash
 wget https://github.com/cgtobi/rmv-card/raw/master/rmv-card.js
-mv list-card.js ~/.homeassistant/www/
+mv rmv-card.js ~/.homeassistant/www/
 ```
 
 ### Step 2
