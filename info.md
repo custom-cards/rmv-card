@@ -12,3 +12,4 @@ This card generates a simple departure card for the RMV public transport service
 | hide_title        | boolean | **Optional** | Hide card title                             | `false`                    |
 | hide_minutes      | boolean | **Optional** | Hide minutes until departure                | `false`                    |
 | show_time         | boolean | **Optional** | Show absolute departure time                | `false`                    |
+| convert_minutes   | boolean | **Optional** | Show minutes until departure as hh:mm       | `false`                    |
