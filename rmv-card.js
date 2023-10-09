@@ -1,4 +1,13 @@
 class RmvCard extends HTMLElement {
+  sec2time(timeInSeconds) {
+    var pad = function(num, size) { return ('000' + num).slice(size * -1); },
+        time = parseFloat(timeInSeconds).toFixed(3),
+        hours = Math.floor(time / 60 / 60),
+        minutes = Math.floor(time / 60) % 60;
+
+    return pad(hours, 2) + ':' + pad(minutes, 2);
+  }
+
   set hass(hass) {
     const entityId = this.config.entity
     const state = hass.states[entityId]
@@ -76,7 +85,7 @@ class RmvCard extends HTMLElement {
 
       const jtime = new Date(journey['departure_time'] + 'Z')
       const time = jtime.toISOString().substr(11, 5)
-      const minutes = parseInt(journey['minutes'])
+      const departureIn = this.config.convert_minutes ? this.sec2time(parseInt(journey['minutes'])*60) : parseInt(journey['minutes'])
 
       tablehtml += `
         <tr>
@@ -84,7 +93,7 @@ class RmvCard extends HTMLElement {
           <td class="expand">${destination}</td>
       `
       tablehtml += `          <td class="shrink" style="text-align:right;">`
-      if (!this.config.hide_minutes) { tablehtml += `${minutes}` }
+      if (!this.config.hide_minutes) { tablehtml += `${departureIn}` }
       if (this.config.show_time) { tablehtml += ` <small>(${time})</small>` }
       tablehtml += `</td>`
 
